@@ -13,8 +13,9 @@ class DataCol extends StatelessWidget {
       children: <Widget>[
         Text(
           title,
+          overflow: TextOverflow.visible,
           style: TextStyle(
-            fontSize: 10.0,
+            fontSize: 9.0,
             color: Colors.white54,
           ),
         ),

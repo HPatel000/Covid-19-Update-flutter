@@ -33,48 +33,58 @@ class ListTileData extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(
-              width: 95.0,
-              child: Text(
-                name,
-                overflow: TextOverflow.visible,
-                style: TextStyle(
-                  fontSize: 14.0,
-                  color: Colors.white,
+            Flexible(
+              flex: 2,
+              fit: FlexFit.tight,
+              child: Container(
+                child: Text(
+                  name,
+                  overflow: TextOverflow.visible,
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
             SizedBox(
               width: 8.0,
             ),
-            DataCol(
-              data: confirmed,
-              title: 'confirmed',
-              colour: Colors.blue,
+            Flexible(
+              flex: 1,
+              fit: FlexFit.tight,
+              child: DataCol(
+                data: confirmed,
+                title: 'confirmed',
+                colour: Colors.blue,
+              ),
             ),
-            SizedBox(
-              width: 5.0,
+            Flexible(
+              flex: 1,
+              fit: FlexFit.tight,
+              child: DataCol(
+                data: active,
+                title: 'active',
+                colour: Colors.yellow,
+              ),
             ),
-            DataCol(
-              data: active,
-              title: 'active',
-              colour: Colors.yellow,
+            Flexible(
+              flex: 1,
+              fit: FlexFit.tight,
+              child: DataCol(
+                data: recovered,
+                title: 'recovered',
+                colour: Colors.green,
+              ),
             ),
-            SizedBox(
-              width: 5.0,
-            ),
-            DataCol(
-              data: recovered,
-              title: 'recovered',
-              colour: Colors.green,
-            ),
-            SizedBox(
-              width: 5.0,
-            ),
-            DataCol(
-              data: deaths,
-              title: 'deaths',
-              colour: Colors.red,
+            Flexible(
+              flex: 1,
+              fit: FlexFit.tight,
+              child: DataCol(
+                data: deaths,
+                title: 'deaths',
+                colour: Colors.red,
+              ),
             ),
           ],
         ),
