@@ -1,6 +1,8 @@
 # covid19updates
 
-A new Flutter application.
+This simple application is useful to get numeric data of confirmed cases, active cases, recovered case and death tolls statewise and district wise also
+
+The aim of the app is to give latest numerical data of Covid19 Cases at fingertips.
 
 ## Getting Started
 
