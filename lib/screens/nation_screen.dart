@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:covid19updates/data/app_start.dart';
 import 'package:covid19updates/widgets/state_stream.dart';
+import 'package:covid19updates/data/data_search.dart';
 
 class NationScreen extends StatelessWidget {
   @override
@@ -16,8 +17,30 @@ class NationScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          TopTitle(
-            title: 'India',
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              TopTitle(
+                title: 'India',
+              ),
+              IconButton(
+                padding: EdgeInsets.only(right: 15.0),
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.white,
+                  size: 30.0,
+                ),
+                onPressed: () {
+                  showSearch(
+                    context: context,
+                    delegate: DataSearch(
+                      statewise: _appStart.statewise,
+                      districtData: _appStart.districtData,
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
           Container(
             decoration: BoxDecoration(
@@ -34,7 +57,8 @@ class NationScreen extends StatelessWidget {
               deaths: _appStart.deaths,
             ),
           ),
-          Expanded(
+          Flexible(
+            fit: FlexFit.loose,
             child: Container(
               color: Color(0xff1b1b2f),
               padding: EdgeInsets.only(top: 5.0),
