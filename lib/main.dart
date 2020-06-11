@@ -42,18 +42,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Covid-19 Updates',
-      theme: ThemeData(fontFamily: 'Ubuntu'),
+      theme: ThemeData(fontFamily: 'Ubuntu', primaryColor: Color(0xffe43f5a)),
       home: Provider(
         create: (context) => _appStart,
         child: Scaffold(
           backgroundColor: Color(0xff1b1b2f),
-          appBar: AppBar(
-            backgroundColor: Color(0xffe43f5a),
-            elevation: 0.0,
-            title: Text(
-              'Covid-19 Updates',
-            ),
-          ),
           body: FutureBuilder(
             future: _start,
             builder: (context, snapshot) {

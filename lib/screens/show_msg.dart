@@ -6,8 +6,8 @@ class ShowLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return ShowMsg(
       data: SizedBox(
-        width: 80,
-        height: 80,
+        width: 90,
+        height: 90,
         child: CircularProgressIndicator(
           strokeWidth: 8.0,
           valueColor: AlwaysStoppedAnimation<Color>(Color(0xffe43f5a)),
@@ -24,6 +24,7 @@ class ShowError extends StatelessWidget {
     return ShowMsg(
       data: Icon(
         Icons.network_locked,
+        size: 200,
         color: Color(0xffe43f5a),
       ),
     );
@@ -51,30 +52,21 @@ class ShowMsg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffe43f5a),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15.0),
-            topRight: Radius.circular(15.0),
-          ),
-          color: Color(0xff1b1b2f),
-        ),
-        child: Center(
-          child: Shimmer.fromColors(
-            baseColor: Color(0xff1f4068),
-            highlightColor: Color(0xffe43f5a),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                data,
-                SizedBox(height: 10.0),
-                Text(
-                  msg,
-                  style: TextStyle(color: Colors.white54, fontSize: 25.0),
-                )
-              ],
-            ),
+      color: Color(0xff1b1b2f),
+      child: Center(
+        child: Shimmer.fromColors(
+          baseColor: Color(0xffe43f5a),
+          highlightColor: Color(0xff1f4068),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              data,
+              SizedBox(height: 50.0),
+              Text(
+                msg,
+                style: TextStyle(color: Colors.white54, fontSize: 30.0),
+              )
+            ],
           ),
         ),
       ),

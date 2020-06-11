@@ -8,19 +8,22 @@ class DistrictStream extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: districtList.length,
-      itemBuilder: (context, index) {
-        final oneDistrict = districtList[index];
-        return ListTileData(
-          name: oneDistrict['district'].toString(),
-          active: ReusableFunction().formatNumber(oneDistrict['active']),
-          confirmed: ReusableFunction().formatNumber(oneDistrict['confirmed']),
-          deaths: ReusableFunction().formatNumber(oneDistrict['deceased']),
-          recovered: ReusableFunction().formatNumber(oneDistrict['recovered']),
-        );
-      },
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (_, index) {
+          final oneDistrict = districtList[index];
+          return ListTileData(
+            name: oneDistrict['district'].toString(),
+            active: ReusableFunction().formatNumber(oneDistrict['active']),
+            confirmed:
+                ReusableFunction().formatNumber(oneDistrict['confirmed']),
+            deaths: ReusableFunction().formatNumber(oneDistrict['deceased']),
+            recovered:
+                ReusableFunction().formatNumber(oneDistrict['recovered']),
+          );
+        },
+        childCount: districtList.length,
+      ),
     );
   }
 }

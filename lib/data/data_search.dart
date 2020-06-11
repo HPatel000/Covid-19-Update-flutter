@@ -45,6 +45,7 @@ class DataSearch extends SearchDelegate<String> {
   Widget buildResults(BuildContext context) {
     int i = ReusableFunction().getStateIndexFromStateWise(query, statewise);
     if (i != -1) {
+      Navigator.pop(context);
       var districtList =
           ReusableFunction().getDistrictList(query, districtData);
       return SingleStateScreen(
@@ -79,6 +80,7 @@ class DataSearch extends SearchDelegate<String> {
                     suggestionList[index], statewise);
                 print(i);
                 if (i != -1) {
+                  Navigator.pop(context);
                   var districtList = ReusableFunction()
                       .getDistrictList(suggestionList[index], districtData);
                   Navigator.push(

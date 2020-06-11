@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:covid19updates/widgets/data_cards.dart';
+import 'package:covid19updates/widgets/curved_top_data_card.dart';
 import 'package:covid19updates/widgets/top_title.dart';
 import 'package:covid19updates/widgets/district_stream.dart';
 
@@ -21,39 +21,27 @@ class SingleStateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffe43f5a),
-      appBar: AppBar(
-        backgroundColor: Color(0xffe43f5a),
-        elevation: 0.0,
-        title: Text(
-          'Covid-19 Updates',
-        ),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          TopTitle(title: state),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15.0),
-                topRight: Radius.circular(15.0),
-              ),
-              color: Color(0xff1b1b2f),
-            ),
-            child: DataCards(
-              confirmed: confirmed,
-              recovered: recovered,
-              deaths: deaths,
-              active: active,
+      backgroundColor: Color(0xff1b1b2f),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            elevation: 0.0,
+            floating: true,
+            expandedHeight: MediaQuery.of(context).size.height * 0.15,
+            title: Text('Covid-19 Updates',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+            flexibleSpace: FlexibleSpaceBar(
+              background: TopTitle(title: state),
             ),
           ),
-          Expanded(
-            child: Container(
-              color: Color(0xff1b1b2f),
-              child: DistrictStream(districtList: districtList),
-            ),
+          SliverToBoxAdapter(
+            child: CurvedTopDataCard(
+                confirmed: confirmed,
+                active: active,
+                recovered: recovered,
+                deaths: deaths),
           ),
+          DistrictStream(districtList: districtList),
         ],
       ),
     );
