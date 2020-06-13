@@ -4,6 +4,16 @@ This simple application is useful to get numeric data of confirmed cases, active
 
 The aim of the app is to give latest numerical data of Covid19 Cases at fingertips.
 
+# snapshots
+<img src="info/Shapshots/IMG-20200608-WA0005.jpg" height="400">     <img src="info/Shapshots/IMG-20200608-WA0007.jpg" height="400">    <img src="info/Shapshots/IMG-20200608-WA0004.jpg" height="400">
+
+# Demo video
+https://www.youtube.com/watch?v=SMNcnc5esLE
+
+# More Information
+https://github.com/HPatel000/Covid-19-Update-flutter/tree/master/info/docs
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
