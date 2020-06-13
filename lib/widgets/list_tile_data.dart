@@ -22,7 +22,7 @@ class ListTileData extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        onTap();
+        onTap != null ? onTap() : print('');
       },
       title: Container(
         decoration: BoxDecoration(
@@ -48,7 +48,7 @@ class ListTileData extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 8.0,
+              width: 5.0,
             ),
             Flexible(
               flex: 1,

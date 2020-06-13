@@ -16,14 +16,14 @@ class AppStart {
   }
 
   void updateNationData(nationData) {
-    statewise = nationData['data']['statewise'];
+    statewise = nationData['statewise'];
     confirmed = ReusableFunction()
-        .formatNumber(nationData['data']['total']['confirmed']);
+        .formatNumber(int.tryParse(statewise[0]['confirmed']));
     recovered = ReusableFunction()
-        .formatNumber(nationData['data']['total']['recovered']);
+        .formatNumber(int.tryParse(statewise[0]['recovered']));
     deaths =
-        ReusableFunction().formatNumber(nationData['data']['total']['deaths']);
+        ReusableFunction().formatNumber(int.tryParse(statewise[0]['deaths']));
     active =
-        ReusableFunction().formatNumber(nationData['data']['total']['active']);
+        ReusableFunction().formatNumber(int.tryParse(statewise[0]['active']));
   }
 }

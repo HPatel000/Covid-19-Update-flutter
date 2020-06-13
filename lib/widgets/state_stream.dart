@@ -12,14 +12,16 @@ class StateStream extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         (_, index) {
-          final oneState = _appStart.statewise[index];
+          final oneState = _appStart.statewise[++index];
           var state = oneState['state'];
-          var active = ReusableFunction().formatNumber(oneState['active']);
-          var confirmed =
-              ReusableFunction().formatNumber(oneState['confirmed']);
-          var deaths = ReusableFunction().formatNumber(oneState['deaths']);
-          var recovered =
-              ReusableFunction().formatNumber(oneState['recovered']);
+          var active =
+              ReusableFunction().formatNumber(int.tryParse(oneState['active']));
+          var confirmed = ReusableFunction()
+              .formatNumber(int.tryParse(oneState['confirmed']));
+          var deaths =
+              ReusableFunction().formatNumber(int.tryParse(oneState['deaths']));
+          var recovered = ReusableFunction()
+              .formatNumber(int.tryParse(oneState['recovered']));
           var districtList =
               ReusableFunction().getDistrictList(state, _appStart.districtData);
           return ListTileData(
@@ -47,7 +49,7 @@ class StateStream extends StatelessWidget {
             },
           );
         },
-        childCount: _appStart.statewise.length,
+        childCount: _appStart.statewise.length - 1,
       ),
     );
   }

@@ -14,8 +14,7 @@ class NetworkHelper {
   }
 
   Future getNationData() {
-    return getData(
-        'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise');
+    return getData('https://api.covid19india.org/data.json');
   }
 
   Future getDistrictData() {

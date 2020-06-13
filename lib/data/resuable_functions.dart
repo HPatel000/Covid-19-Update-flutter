@@ -17,8 +17,8 @@ class ReusableFunction {
 
   List<String> stateNameList(List statewise) {
     List<String> list = [];
-    for (var state in statewise) {
-      list.add(state['state'].toString());
+    for (var i = 1; i < statewise.length; i++) {
+      list.add(statewise[i]['state'].toString());
     }
     return list;
   }

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DataCol extends StatelessWidget {
@@ -26,7 +27,7 @@ class DataCol extends StatelessWidget {
           data,
           overflow: TextOverflow.visible,
           style: TextStyle(
-            fontSize: 13.0,
+            fontSize: 12.0,
             color: colour,
           ),
         ),
