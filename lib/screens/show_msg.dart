@@ -27,6 +27,7 @@ class ShowError extends StatelessWidget {
         size: 200,
         color: Color(0xffe43f5a),
       ),
+      msg: 'Connection Problem, Please try again',
     );
   }
 }

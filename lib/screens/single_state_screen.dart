@@ -1,5 +1,6 @@
+import 'package:covid19updates/widgets/curved_top.dart';
+import 'package:covid19updates/widgets/data_cards.dart';
 import 'package:flutter/material.dart';
-import 'package:covid19updates/widgets/curved_top_data_card.dart';
 import 'package:covid19updates/widgets/top_title.dart';
 import 'package:covid19updates/widgets/district_stream.dart';
 
@@ -27,19 +28,21 @@ class SingleStateScreen extends StatelessWidget {
           SliverAppBar(
             elevation: 0.0,
             floating: true,
-            expandedHeight: MediaQuery.of(context).size.height * 0.15,
+            expandedHeight: 100,
             title: Text('Covid-19 Updates',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
             flexibleSpace: FlexibleSpaceBar(
               background: TopTitle(title: state),
             ),
           ),
+          CurvedTop(),
           SliverToBoxAdapter(
-            child: CurvedTopDataCard(
-                confirmed: confirmed,
-                active: active,
-                recovered: recovered,
-                deaths: deaths),
+            child: DataCards(
+              confirmed: confirmed,
+              active: active,
+              recovered: recovered,
+              deaths: deaths,
+            ),
           ),
           DistrictStream(districtList: districtList),
         ],

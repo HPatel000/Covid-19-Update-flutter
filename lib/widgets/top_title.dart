@@ -10,7 +10,6 @@ class TopTitle extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 70),
       padding: EdgeInsets.only(left: 15.0, bottom: 5.0, right: 25.0),
-      color: Color(0xffe43f5a),
       child: Text(
         title,
         overflow: TextOverflow.ellipsis,
