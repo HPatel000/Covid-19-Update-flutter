@@ -6,10 +6,10 @@ import 'package:covid19updates/widgets/district_stream.dart';
 
 class SingleStateScreen extends StatelessWidget {
   final String state;
-  final String confirmed;
-  final String recovered;
-  final String deaths;
-  final String active;
+  final double confirmed;
+  final double recovered;
+  final double deaths;
+  final double active;
   final districtList;
 
   SingleStateScreen(

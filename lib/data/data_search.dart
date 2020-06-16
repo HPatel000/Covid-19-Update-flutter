@@ -49,11 +49,11 @@ class DataSearch extends SearchDelegate<String> {
       var districtList =
           ReusableFunction().getDistrictList(query, districtData);
       return SingleStateScreen(
-        state: statewise[i]['state'].toString(),
-        active: statewise[i]['active'].toString(),
-        confirmed: statewise[i]['confirmed'].toString(),
-        deaths: statewise[i]['deaths'].toString(),
-        recovered: statewise[i]['recovered'].toString(),
+        state: statewise[i]['state'],
+        active: statewise[i]['active'],
+        confirmed: statewise[i]['confirmed'],
+        deaths: statewise[i]['deaths'],
+        recovered: statewise[i]['recovered'],
         districtList: districtList,
       );
     } else {
@@ -88,11 +88,11 @@ class DataSearch extends SearchDelegate<String> {
                     MaterialPageRoute(
                       builder: (context) {
                         return SingleStateScreen(
-                          state: statewise[i]['state'].toString(),
-                          active: statewise[i]['active'].toString(),
-                          confirmed: statewise[i]['confirmed'].toString(),
-                          deaths: statewise[i]['deaths'].toString(),
-                          recovered: statewise[i]['recovered'].toString(),
+                          state: statewise[i]['state'],
+                          active: statewise[i]['active'],
+                          confirmed: statewise[i]['confirmed'],
+                          deaths: statewise[i]['deaths'],
+                          recovered: statewise[i]['recovered'],
                           districtList: districtList,
                         );
                       },

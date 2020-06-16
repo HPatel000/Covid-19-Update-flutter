@@ -1,13 +1,14 @@
+import 'package:covid19updates/data/resuable_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19updates/widgets/data_col.dart';
 
 class ListTileData extends StatelessWidget {
   final String name;
-  final String confirmed;
-  final String recovered;
-  final String deaths;
-  final String active;
+  final double confirmed;
+  final double recovered;
+  final double deaths;
+  final double active;
   final Function onTap;
 
   ListTileData({
@@ -54,7 +55,7 @@ class ListTileData extends StatelessWidget {
               flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
-                data: confirmed,
+                data: ReusableFunction().formatNumber(confirmed),
                 title: 'confirmed',
                 colour: Colors.blue,
               ),
@@ -63,7 +64,7 @@ class ListTileData extends StatelessWidget {
               flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
-                data: active,
+                data: ReusableFunction().formatNumber(active),
                 title: 'active',
                 colour: Colors.yellow,
               ),
@@ -72,7 +73,7 @@ class ListTileData extends StatelessWidget {
               flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
-                data: recovered,
+                data: ReusableFunction().formatNumber(recovered),
                 title: 'recovered',
                 colour: Colors.green,
               ),
@@ -81,7 +82,7 @@ class ListTileData extends StatelessWidget {
               flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
-                data: deaths,
+                data: ReusableFunction().formatNumber(deaths),
                 title: 'deaths',
                 colour: Colors.red,
               ),

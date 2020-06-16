@@ -14,14 +14,10 @@ class StateStream extends StatelessWidget {
         (_, index) {
           final oneState = _appStart.statewise[++index];
           var state = oneState['state'];
-          var active =
-              ReusableFunction().formatNumber(int.tryParse(oneState['active']));
-          var confirmed = ReusableFunction()
-              .formatNumber(int.tryParse(oneState['confirmed']));
-          var deaths =
-              ReusableFunction().formatNumber(int.tryParse(oneState['deaths']));
-          var recovered = ReusableFunction()
-              .formatNumber(int.tryParse(oneState['recovered']));
+          var active = double.tryParse(oneState['active']);
+          var confirmed = double.tryParse(oneState['confirmed']);
+          var deaths = double.tryParse(oneState['deaths']);
+          var recovered = double.tryParse(oneState['recovered']);
           var districtList =
               ReusableFunction().getDistrictList(state, _appStart.districtData);
           return ListTileData(

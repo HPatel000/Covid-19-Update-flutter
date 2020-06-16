@@ -1,3 +1,4 @@
+import 'package:covid19updates/data/resuable_functions.dart';
 import 'package:flutter/material.dart';
 import 'reusable_card.dart';
 
@@ -9,10 +10,10 @@ class DataCards extends StatelessWidget {
     @required this.deaths,
   });
 
-  final String confirmed;
-  final String active;
-  final String recovered;
-  final String deaths;
+  final double confirmed;
+  final double active;
+  final double recovered;
+  final double deaths;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +25,12 @@ class DataCards extends StatelessWidget {
             children: <Widget>[
               ReusableCard(
                 title: 'Confirmed Cases',
-                data: confirmed ?? '0',
+                data: ReusableFunction().formatNumber(confirmed) ?? '0',
                 colour: Colors.blue,
               ),
               ReusableCard(
                 title: 'Active Cases',
-                data: active ?? '0',
+                data: ReusableFunction().formatNumber(active) ?? '0',
                 colour: Colors.yellow,
               ),
             ],
@@ -38,12 +39,14 @@ class DataCards extends StatelessWidget {
             children: <Widget>[
               ReusableCard(
                 title: 'Recovered',
-                data: recovered ?? '0',
+                data: ReusableFunction().formatNumber(recovered) ?? '0',
+                rate: ((recovered / confirmed) * 100).toStringAsFixed(2),
                 colour: Colors.green,
               ),
               ReusableCard(
                 title: 'Deaths',
-                data: deaths ?? '0',
+                data: ReusableFunction().formatNumber(deaths) ?? '0',
+                rate: ((deaths / confirmed) * 100).toStringAsFixed(2),
                 colour: Colors.red,
               ),
             ],

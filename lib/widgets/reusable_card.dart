@@ -4,7 +4,9 @@ class ReusableCard extends StatelessWidget {
   final String title;
   final String data;
   final Color colour;
-  ReusableCard({@required this.title, @required this.data, this.colour});
+  final String rate;
+  ReusableCard(
+      {@required this.title, @required this.data, this.colour, this.rate});
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,16 @@ class ReusableCard extends StatelessWidget {
                 color: colour,
               ),
             ),
+            SizedBox(height: 15.0),
+            rate != null
+                ? Text(
+                    'rate: $rate%',
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.white54,
+                    ),
+                  )
+                : Container(),
           ],
         ),
       ),

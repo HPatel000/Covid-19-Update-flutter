@@ -1,12 +1,11 @@
 import 'package:covid19updates/services/networking.dart';
-import 'package:covid19updates/data/resuable_functions.dart';
 
 class AppStart {
   List statewise;
-  String confirmed;
-  String recovered;
-  String deaths;
-  String active;
+  double confirmed;
+  double recovered;
+  double deaths;
+  double active;
   var districtData;
 
   Future<Null> setData() async {
@@ -17,13 +16,9 @@ class AppStart {
 
   void updateNationData(nationData) {
     statewise = nationData['statewise'];
-    confirmed = ReusableFunction()
-        .formatNumber(int.tryParse(statewise[0]['confirmed']));
-    recovered = ReusableFunction()
-        .formatNumber(int.tryParse(statewise[0]['recovered']));
-    deaths =
-        ReusableFunction().formatNumber(int.tryParse(statewise[0]['deaths']));
-    active =
-        ReusableFunction().formatNumber(int.tryParse(statewise[0]['active']));
+    confirmed = double.tryParse(statewise[0]['confirmed']);
+    recovered = double.tryParse(statewise[0]['recovered']);
+    deaths = double.tryParse(statewise[0]['deaths']);
+    active = double.tryParse(statewise[0]['active']);
   }
 }
