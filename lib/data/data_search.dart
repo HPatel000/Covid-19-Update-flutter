@@ -50,10 +50,10 @@ class DataSearch extends SearchDelegate<String> {
           ReusableFunction().getDistrictList(query, districtData);
       return SingleStateScreen(
         state: statewise[i]['state'],
-        active: statewise[i]['active'],
-        confirmed: statewise[i]['confirmed'],
-        deaths: statewise[i]['deaths'],
-        recovered: statewise[i]['recovered'],
+        active: double.tryParse(statewise[i]['active'].toString()),
+        confirmed: double.tryParse(statewise[i]['confirmed'].toString()),
+        deaths: double.tryParse(statewise[i]['deaths']),
+        recovered: double.tryParse(statewise[i]['recovered']),
         districtList: districtList,
       );
     } else {
@@ -89,10 +89,12 @@ class DataSearch extends SearchDelegate<String> {
                       builder: (context) {
                         return SingleStateScreen(
                           state: statewise[i]['state'],
-                          active: statewise[i]['active'],
-                          confirmed: statewise[i]['confirmed'],
-                          deaths: statewise[i]['deaths'],
-                          recovered: statewise[i]['recovered'],
+                          active: double.tryParse(
+                              statewise[i]['active'].toString()),
+                          confirmed: double.tryParse(
+                              statewise[i]['confirmed'].toString()),
+                          deaths: double.tryParse(statewise[i]['deaths']),
+                          recovered: double.tryParse(statewise[i]['recovered']),
                           districtList: districtList,
                         );
                       },

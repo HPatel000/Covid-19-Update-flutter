@@ -20,4 +20,8 @@ class NetworkHelper {
   Future getDistrictData() {
     return getData('https://api.covid19india.org/v2/state_district_wise.json');
   }
+
+  Future getGlobalData() {
+    return getData('https://api.covid19api.com/summary');
+  }
 }

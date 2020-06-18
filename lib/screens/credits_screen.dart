@@ -136,7 +136,7 @@ class LinkTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 15.0),
+      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
       decoration: BoxDecoration(
         color: Color(0xff1f4068),
         borderRadius: BorderRadius.all(Radius.circular(50.0)),

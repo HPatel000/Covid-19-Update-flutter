@@ -13,7 +13,7 @@ class ReusableCard extends StatelessWidget {
     return Expanded(
       child: Container(
         margin: EdgeInsets.all(6.0),
-        padding: EdgeInsets.all(15.0),
+        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
         decoration: BoxDecoration(
           color: Color(0xff162447),
           borderRadius: BorderRadius.circular(10.0),
@@ -33,7 +33,7 @@ class ReusableCard extends StatelessWidget {
             Text(
               data,
               style: TextStyle(
-                fontSize: 30.0,
+                fontSize: 25.0,
                 fontWeight: FontWeight.w900,
                 color: colour,
               ),
