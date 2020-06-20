@@ -1,8 +1,8 @@
-import 'package:covid19updates/data/global_page.dart';
 import 'package:covid19updates/screens/credits_screen.dart';
-import 'package:covid19updates/screens/prevention_screen.dart';
+import 'package:covid19updates/widgets/awareness_page_link.dart';
 import 'package:covid19updates/widgets/curved_top.dart';
 import 'package:covid19updates/widgets/data_cards.dart';
+import 'package:covid19updates/widgets/global_page_link.dart';
 import 'package:flutter/material.dart';
 import 'package:covid19updates/widgets/top_title.dart';
 import 'package:flutter/rendering.dart';
@@ -63,112 +63,8 @@ class NationScreen extends StatelessWidget {
           ),
         ),
         CurvedTop(),
-        SliverToBoxAdapter(
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PreventionPage()));
-            },
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-              padding: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Color(0xff162447),
-//                borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                image: DecorationImage(
-                  image: AssetImage('images/background.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Text(
-                            'Spread',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25.0,
-                            ),
-                          ),
-                          Text(
-                            ' Awareness',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 25.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(width: 20.0),
-                      Hero(
-                        tag: 'heartbeat',
-                        child: FaIcon(
-                          FontAwesomeIcons.heartbeat,
-                          color: Color(0xffe43f5a),
-                          size: 30.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Icon(
-                    Icons.navigate_next,
-                    color: Colors.white,
-                    size: 40.0,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => GlobalPage()));
-            },
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
-              padding: EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                color: Color(0xff162447),
-//                borderRadius: BorderRadius.all(Radius.circular(15.0)),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        'Global Data',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 25.0,
-                        ),
-                      ),
-                      SizedBox(width: 20.0),
-                      FaIcon(
-                        FontAwesomeIcons.globe,
-                        color: Color(0xffe43f5a),
-                        size: 30.0,
-                      ),
-                    ],
-                  ),
-                  Icon(
-                    Icons.navigate_next,
-                    color: Colors.white,
-                    size: 40.0,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        AwarenessPageLink(),
+        GlobalPageLink(),
         SliverToBoxAdapter(
           child: DataCards(
             confirmed: _appStart.confirmed,

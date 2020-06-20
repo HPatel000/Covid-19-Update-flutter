@@ -106,18 +106,17 @@ class CreditsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 10.0),
                 InkWell(
-                  onTap: () => _launchURL(
-                      'https://www.freepik.com/free-vector/coronavirus-prevention-tips_7421195.htm#page=1&query=covid19%20prevention&position=34'),
-                  child: LinkTile(text: 'FreePik Resource'),
-                ),
-                InkWell(
-                  onTap: () => _launchURL(
-                      'https://www.freepik.com/free-vector/coronavirus-tips-protection-against-viruses_7577905.htm#page=1&query=covid19%20prevention&position=20'),
+                  onTap: () =>
+                      _launchURL('https://www.freepik.com/free-vector/'),
                   child: LinkTile(text: 'FreePik Resource'),
                 ),
                 InkWell(
                   onTap: () => _launchURL('https://api.covid19india.org'),
                   child: LinkTile(text: 'Covid-19 India API'),
+                ),
+                InkWell(
+                  onTap: () => _launchURL('https://api.covid19api.com/summary'),
+                  child: LinkTile(text: 'Covid-19 Global API'),
                 ),
               ],
             ),
