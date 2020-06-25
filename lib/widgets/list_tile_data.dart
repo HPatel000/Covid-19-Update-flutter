@@ -30,12 +30,12 @@ class ListTileData extends StatelessWidget {
           color: Color(0xff1f4068),
           borderRadius: BorderRadius.circular(5.0),
         ),
-        padding: EdgeInsets.all(15.0),
+        padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Flexible(
-              flex: 3,
+              flex: 2,
               fit: FlexFit.tight,
               child: Container(
                 child: Text(
@@ -49,7 +49,7 @@ class ListTileData extends StatelessWidget {
               ),
             ),
             Flexible(
-              flex: 2,
+              flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
                 data: ReusableFunction().formatNumber(confirmed),
@@ -58,7 +58,7 @@ class ListTileData extends StatelessWidget {
               ),
             ),
             Flexible(
-              flex: 2,
+              flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
                 data: ReusableFunction().formatNumber(active),
@@ -67,7 +67,7 @@ class ListTileData extends StatelessWidget {
               ),
             ),
             Flexible(
-              flex: 2,
+              flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
                 data: ReusableFunction().formatNumber(recovered),
@@ -76,7 +76,7 @@ class ListTileData extends StatelessWidget {
               ),
             ),
             Flexible(
-              flex: 2,
+              flex: 1,
               fit: FlexFit.tight,
               child: DataCol(
                 data: ReusableFunction().formatNumber(deaths),
